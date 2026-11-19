@@ -1,0 +1,450 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* MAIN PAGE */
+
+body {
+    background: #020b07;
+    color: #f4ead5;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+/* FOREST BACKGROUND */
+
+.hero {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(0, 10, 5, 0.35), rgba(0, 10, 5, 0.45)),
+        url("./forest.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* CONTENT */
+
+.content {
+    max-width: 1050px;
+    width: 100%;
+}
+
+
+/* SMALL INTRODUCTORY HEADING */
+
+.eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+
+/* KOECH'S NAME */
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 8vw, 95px);
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* BIRTHDAY HEADING */
+
+.content h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(35px, 6vw, 65px);
+    font-weight: 400;
+    letter-spacing: 12px;
+    margin-bottom: 20px;
+}
+
+
+/* DECORATIVE DIVIDER */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 30px;
+    margin: 20px auto;
+}
+
+.divider span {
+    width: 180px;
+    height: 1px;
+    background: #c5a56a;
+}
+
+
+/* SUBTITLE */
+
+.subtitle {
+    font-size: 27px;
+    font-style: italic;
+    margin: 25px 0;
+}
+
+
+/* BIRTHDAY MESSAGE */
+
+.birthday-message {
+    max-width: 850px;
+    margin: 30px auto;
+    font-size: 25px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+
+/* SURPRISE BUTTON */
+
+button {
+    margin-top: 25px;
+    padding: 18px 45px;
+
+    background: rgba(0, 35, 23, 0.85);
+    color: #f4ead5;
+
+    border: 2px solid #c5a56a;
+    border-radius: 50px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-style: italic;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+button span {
+    margin-right: 12px;
+}
+
+button:hover {
+    background: #164b35;
+    box-shadow: 0 0 25px rgba(190, 160, 95, 0.4);
+    transform: translateY(-3px);
+}
+
+
+/* LETTER SECTION */
+
+#birthday-letter {
+    display: none;
+
+    padding: 100px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0, 15, 9, 0.75),
+            rgba(0, 10, 6, 0.85)
+        ),
+        url("forest.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* LETTER ANIMATION */
+
+#birthday-letter.show {
+    display: block;
+    animation: letterReveal 2s ease forwards;
+}
+
+@keyframes letterReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* LETTER CARD */
+
+.letter-card {
+    max-width: 850px;
+    margin: auto;
+
+    padding: 65px;
+
+    background: #eee0c5;
+    color: #263b2c;
+
+    border: 3px double #a58a55;
+
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
+
+    line-height: 1.9;
+}
+
+
+/* LETTER HEADING */
+
+.letter-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+/* LETTER DIVIDER */
+
+.letter-divider {
+    width: 150px;
+    height: 2px;
+    background: #8c7545;
+    margin: 20px auto 35px;
+}
+
+
+/* LETTER PARAGRAPHS */
+
+.letter-card p {
+    font-size: 21px;
+    margin-bottom: 25px;
+}
+
+
+/* LETTER DECORATION */
+
+.letter-decoration {
+    text-align: center;
+    font-size: 35px;
+    color: #66815b;
+    margin: 20px;
+}
+
+
+/* CONFETTI */
+
+#confetti-container {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 1000;
+}
+
+
+/* INDIVIDUAL PAPER PIECES */
+
+.confetti {
+    position: absolute;
+    top: -20px;
+
+    width: 9px;
+    height: 16px;
+
+    border-radius: 1px;
+
+    animation: falling linear forwards;
+}
+
+
+@keyframes falling {
+
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(900deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* MOBILE SCREEN */
+
+@media (max-width: 600px) {
+
+    .eyebrow {
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .content h2 {
+        font-size: 32px;
+        letter-spacing: 5px;
+    }
+
+    .subtitle {
+        font-size: 21px;
+    }
+
+    .birthday-message {
+        font-size: 20px;
+    }
+
+    .letter-card {
+        padding: 30px 20px;
+    }
+
+    .letter-card h2 {
+        font-size: 36px;
+    }
+
+    .letter-card p {
+        font-size: 19px;
+    }
+
+    .divider span {
+        width: 70px;
+    }
+
+}
+/* BEAUTIFUL LETTER DECORATIONS */
+
+.letter-card {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+    padding: 65px;
+
+    background: linear-gradient(
+        135deg,
+        #f5e9d2,
+        #e8d7b8,
+        #f5e9d2
+    );
+
+    color: #263b2c;
+
+    border: 4px double #927849;
+    outline: 1px solid #526b45;
+    outline-offset: 8px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.5),
+        inset 0 0 35px rgba(120, 95, 50, 0.12);
+}
+
+/* BOTANICAL CORNERS */
+
+.letter-card::before,
+.letter-card::after {
+    position: absolute;
+    color: #52734b;
+    font-size: 65px;
+    font-family: serif;
+    opacity: 0.8;
+}
+
+.letter-card::before {
+    content: "❧";
+    top: 5px;
+    left: 15px;
+}
+
+.letter-card::after {
+    content: "❧";
+    bottom: 5px;
+    right: 15px;
+    transform: rotate(180deg);
+}
+
+/* LETTER HEADING */
+
+.letter-card h2 {
+    color: #294b35;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* PARAGRAPH STYLING */
+
+.letter-card p {
+    color: #354536;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+.letter-divider {
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #927849, #52734b, #927849, transparent);
+    margin: 20px auto 35px;
+    position: relative;
+}
+
+.letter-divider::after {
+    content: "❧";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    background: #eee0c5;
+    color: #52734b;
+    padding: 0 10px;
+    font-size: 25px;
+}
+#open-surprise {
+    transition: all 0.4s ease;
+}
+
+#open-surprise:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #1b8054, #0b4d35);
+    box-shadow: 0 8px 25px rgba(34, 139, 84, 0.5);
+    border-color: #d4af37;
+}
+.birthday-message {
+    animation: messageFade 2.5s ease-in-out forwards;
+}
+
+@keyframes messageFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
